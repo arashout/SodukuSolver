@@ -1,0 +1,44 @@
+html, body{
+    height: 100%;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+}
+$minBoardWidth: 270;
+$boardWidth: 45;
+#board{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    min-width: $minBoardWidth + px;
+    min-height: $minBoardWidth + px;
+    width: $boardWidth + vw;
+    height: $boardWidth + vw;
+    
+    box-sizing: content-box;
+    border: 5px black solid;
+}
+.tile{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    
+    justify-content: center;
+    align-items: center;
+    
+    margin: 0;
+    padding: 0;
+    min-width: $minBoardWidth/9 + px;
+    min-height: $minBoardWidth/9 + px;
+    width: $boardWidth/9 + vw;
+    height: $boardWidth/9 + vw;
+    
+    box-sizing: border-box;
+    border: 1px blue solid;
+}
