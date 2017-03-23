@@ -30,7 +30,7 @@ function readBoard(n) {
         for(var j = 0; j < n; j++){
             var idName = "tile" + i.toString() + j.toString();
             var tileDiv = document.getElementById(idName);
-            arrTileNums[i][j] = tileDiv.innerHTML;
+            arrTileNums[i][j] = parseInt((tileDiv.innerHTML));
         }
     }
     return arrTileNums;
