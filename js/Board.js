@@ -14,12 +14,17 @@ class Board {
     findFirstEmpty() {
         for (var r = 0; r < this.n; r++) {
             for (var c = 0; c < this.n; c++) {
-                if (this.arrTwoD[r][c] === null) return {
+                if (this.arrTwoD[r][c] === 0) return {
                     row: r,
                     column: c
                 }
             }
         }
+        return null;
+    }
+
+    isFull(){
+        return null === this.findFirstEmpty();        
     }
 
     isInSquare(num, r, c) {
