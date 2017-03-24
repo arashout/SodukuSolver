@@ -35,7 +35,9 @@ function readBoard(n) {
     }
     return arrTileNums;
 }
+
 window.onload = function () {
     createBoard(9);
-    console.log(readBoard(9));
+    var b = new Board(readBoard(9));
+    console.log(b);
 };
