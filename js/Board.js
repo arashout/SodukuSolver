@@ -23,8 +23,8 @@ class Board {
         return null;
     }
 
-    isFull(){
-        return null === this.findFirstEmpty();        
+    isFull() {
+        return null === this.findFirstEmpty();
     }
 
     isInSquare(num, r, c) {
@@ -49,15 +49,17 @@ class Board {
         }
         return false;
     }
-    
-    getNum(r, c){
+    getSize() {
+        return this.n;
+    }
+    getNum(r, c) {
         return this.arrTwoD[r][c];
     }
-    
-    setNum(num, r, c){
+
+    setNum(num, r, c) {
         this.arrTwoD[r][c] = num;
     }
-    
+
     //HELPER FUNCTIONS
     initSquareDict() {
         for (var r = 0; r < this.n; r++) {
