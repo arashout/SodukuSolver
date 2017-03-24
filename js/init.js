@@ -39,5 +39,6 @@ function readBoard(n) {
 window.onload = function () {
     createBoard(9);
     var b = new Board(readBoard(9));
+    var boole = b.isInSquare(1, 1, 1);
     console.log(b);
 };

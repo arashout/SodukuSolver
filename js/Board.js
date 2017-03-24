@@ -22,7 +22,14 @@ class Board {
         }
     }
 
-    isInSquare(num, r, c) {}
+    isInSquare(num, r, c) {
+        var i = this.getSquareIndex(r,c);
+        for(var j = 0;j < this.n; j++){
+            var curNum = this.getNum(this.squares[i][j]);
+            if(num === curNum) return true;
+        }
+        return false;
+    }
 
     isNumInRow(num, r) {
         for (var c = 0; c < this.n; c++) {
@@ -63,6 +70,9 @@ class Board {
         // Index for squares will be strings "XX"
         var i1 = Math.floor(r / this.s).toString();
         var i2 = Math.floor(c / this.s).toString();
-        return i1 + i1;
+        return i1 + i2;
+    }
+    getNum(rcO){
+        return this.arrTwoD[rcO.row][rcO.column];
     }
 }
