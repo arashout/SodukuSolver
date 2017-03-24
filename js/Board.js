@@ -23,10 +23,10 @@ class Board {
     }
 
     isInSquare(num, r, c) {
-        var i = this.getSquareIndex(r,c);
-        for(var j = 0;j < this.n; j++){
-            var curNum = this.getNum(this.squares[i][j]);
-            if(num === curNum) return true;
+        var i = this.getSquareIndex(r, c);
+        for (var j = 0; j < this.n; j++) {
+            var curNum = this.getNumFromObject(this.squares[i][j]);
+            if (num === curNum) return true;
         }
         return false;
     }
@@ -44,7 +44,15 @@ class Board {
         }
         return false;
     }
-
+    
+    getNum(r, c){
+        return this.arrTwoD[r][c];
+    }
+    
+    setNum(num, r, c){
+        this.arrTwoD[r][c] = num;
+    }
+    
     //HELPER FUNCTIONS
     initSquareDict() {
         for (var r = 0; r < this.n; r++) {
@@ -72,7 +80,7 @@ class Board {
         var i2 = Math.floor(c / this.s).toString();
         return i1 + i2;
     }
-    getNum(rcO){
+    getNumFromObject(rcO) {
         return this.arrTwoD[rcO.row][rcO.column];
     }
 }
