@@ -81,6 +81,9 @@ class Board {
     setNum(num, r, c) {
         this.arrTwoD[r][c] = num;
     }
+    /**
+     * "Draws" the current board onto the HTML page
+     */
     drawBoard(){
         for (var r = 0; r < this.n; r++) {
             for (var c = 0; c < this.n; c++) {
@@ -90,6 +93,11 @@ class Board {
         }
     }
     //HELPER FUNCTIONS
+    /**
+     * Splits up the Sudoku grid into squares
+     * Which are stored in a dictionary with keys as
+     * shown in getSquareIndex
+     */
     initSquareDict() {
         for (var r = 0; r < this.n; r++) {
             for (var c = 0; c < this.n; c++) {
@@ -110,10 +118,17 @@ class Board {
             }
         }
     }
+    /**
+     * Given a row and column, determines what key
+     * to use to access the squares dictionary
+     * @param   {number} r [row index]
+     * @param   {number} c [column index]
+     * @returns {string} i1 + i2 [key used for accessing squares dictionary]
+     */
     getSquareIndex(r, c) {
         // Index for squares will be strings "XX"
         var i1 = Math.floor(r / this.s).toString();
         var i2 = Math.floor(c / this.s).toString();
-        return i1 + i2;
+        return i1 + i2; //Key!
     }
 }
