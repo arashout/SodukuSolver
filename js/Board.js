@@ -26,7 +26,14 @@ class Board {
     isFull() {
         return null === this.findFirstEmpty();
     }
-
+    isValidMove(num, r, c){
+        // Just variables for boolean conditions
+        var a, b, c;
+        a = !this.isInSquare(num, r, c);
+        b = !this.isNumInRow(num, r);
+        c = !this.isNumInColumn(num, c);
+        return a && b && c;
+    }
     isInSquare(num, r, c) {
         var i = this.getSquareIndex(r, c);
         for (var j = 0; j < this.n; j++) {
@@ -59,7 +66,14 @@ class Board {
     setNum(num, r, c) {
         this.arrTwoD[r][c] = num;
     }
-
+    drawBoard(){
+        for (var r = 0; r < this.n; r++) {
+            for (var c = 0; c < this.n; c++) {
+                var tile = document.getElementById("tile" + r.toString() + c.toString());
+                tile.innerHTML = this.getNum(r, c); 
+            }
+        }
+    }
     //HELPER FUNCTIONS
     initSquareDict() {
         for (var r = 0; r < this.n; r++) {
@@ -70,16 +84,16 @@ class Board {
                     this.squares[i].push({
                         row: r,
                         column: c
-                    })
-                } else {
+                    });
+                } 
+                else {
                     this.squares[i].push({
                         row: r,
                         column: c
-                    })
+                    });
                 }
             }
         }
-
     }
     getSquareIndex(r, c) {
         // Index for squares will be strings "XX"
