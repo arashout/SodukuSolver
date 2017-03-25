@@ -26,6 +26,14 @@ class Board {
     isFull() {
         return null === this.findFirstEmpty();
     }
+    /**
+     * Combines row, column and square checking conditions
+     * into one, easy to call method.
+     * @param   {number} num [Number to check for]
+     * @param   {number} r   [Row index]
+     * @param   {number} c   [Column index]
+     * @returns {boolean} [True means okay to insert num]
+     */
     isValidMove(num, r, c){
         // Just variables for boolean conditions
         var a, b, c;
@@ -35,9 +43,16 @@ class Board {
         return a && b && c;
     }
     isInSquare(num, r, c) {
+        // Get index of square from square dictionary
         var i = this.getSquareIndex(r, c);
+        var square = this.squares[i];
+        // Iterate through list of row, column tuples in square
+        // To check if number is in square
+        var r, c;
         for (var j = 0; j < this.n; j++) {
-            var curNum = this.getNumFromObject(this.squares[i][j]);
+            r = square[j].row;
+            c = square[j].column;
+            var curNum = this.getNum(r, c);
             if (num === curNum) return true;
         }
         return false;
@@ -100,8 +115,5 @@ class Board {
         var i1 = Math.floor(r / this.s).toString();
         var i2 = Math.floor(c / this.s).toString();
         return i1 + i2;
-    }
-    getNumFromObject(rcO) {
-        return this.arrTwoD[rcO.row][rcO.column];
     }
 }
