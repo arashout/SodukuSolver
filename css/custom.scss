@@ -50,3 +50,12 @@ $boardWidth: 45;
     text-align: center;
     font-size: 200%;
 }
+/*Remove the stupid spinner on number fields*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
