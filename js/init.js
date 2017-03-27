@@ -15,13 +15,13 @@ function createBoardFromArray(arr2D, n){
     var el = document.getElementById("board");
     for(var i = 0; i < n; i++){
         for(var j = 0; j < n; j++){
-            var tileDiv = document.createElement("input");
-            tileDiv.setAttribute("type","number");
-            tileDiv.classList.add("fixedNum");
-            tileDiv.classList.add("tile");
-            tileDiv.id = "tile" + i.toString() + j.toString();
-            tileDiv.value = arr2D[i][j]; //For debugging
-            el.appendChild(tileDiv);
+            var tileElement = document.createElement("input");
+            tileElement.setAttribute("type","number");
+            tileElement.classList.add("fixedNum");
+            tileElement.classList.add("tile");
+            tileElement.id = "tile" + i.toString() + j.toString();
+            tileElement.value = arr2D[i][j]; //For debugging
+            el.appendChild(tileElement);
         }
     }
 };
@@ -30,8 +30,8 @@ function readBoard(n) {
     for(var i = 0; i < n; i++){
         for(var j = 0; j < n; j++){
             var idName = "tile" + i.toString() + j.toString();
-            var tileDiv = document.getElementById(idName);
-            arrTileNums[i][j] = parseInt((tileDiv.value));
+            var tileElement = document.getElementById(idName);
+            arrTileNums[i][j] = parseInt((tileElement.value));
         }
     }
     return arrTileNums;
