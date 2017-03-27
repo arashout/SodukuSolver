@@ -88,7 +88,7 @@ class Board {
         for (var r = 0; r < this.n; r++) {
             for (var c = 0; c < this.n; c++) {
                 var tile = document.getElementById("tile" + r.toString() + c.toString());
-                tile.innerHTML = this.getNum(r, c); 
+                tile.value = this.getNum(r, c);
             }
         }
     }

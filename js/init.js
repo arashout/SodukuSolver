@@ -11,26 +11,16 @@ function createSquareArray(n) {
     }
     return arr;
 };
-function createBoard(n) {
-    var el = document.getElementById("board");
-    for(var i = 0; i < n; i++){
-        for(var j = 0; j < n; j++){
-            var tileDiv = document.createElement("div");
-            tileDiv.classList.add("tile");
-            tileDiv.id = "tile" + i.toString() + j.toString();
-            tileDiv.innerHTML = i.toString() + j.toString(); //For debugging
-            el.appendChild(tileDiv);
-        }
-    }
-};
 function createBoardFromArray(arr2D, n){
     var el = document.getElementById("board");
     for(var i = 0; i < n; i++){
         for(var j = 0; j < n; j++){
-            var tileDiv = document.createElement("div");
+            var tileDiv = document.createElement("input");
+            tileDiv.setAttribute("type","number");
+            tileDiv.classList.add("fixedNum");
             tileDiv.classList.add("tile");
             tileDiv.id = "tile" + i.toString() + j.toString();
-            tileDiv.innerHTML = arr2D[i][j]; //For debugging
+            tileDiv.value = arr2D[i][j]; //For debugging
             el.appendChild(tileDiv);
         }
     }
@@ -41,7 +31,7 @@ function readBoard(n) {
         for(var j = 0; j < n; j++){
             var idName = "tile" + i.toString() + j.toString();
             var tileDiv = document.getElementById(idName);
-            arrTileNums[i][j] = parseInt((tileDiv.innerHTML));
+            arrTileNums[i][j] = parseInt((tileDiv.value));
         }
     }
     return arrTileNums;
