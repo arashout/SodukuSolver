@@ -51,8 +51,8 @@ function readBoard(n) {
         for(var j = 0; j < n; j++){
             var idName = "tile" + i.toString() + j.toString();
             var tileElement = document.getElementById(idName);
-            // Read values from input field - 0 represents empty
-            if(tileElement.value === "") arrTileNums[i][j] = 0;
+            // Only read values that user enters (red tiles), otherwise enter blank
+            if(tileElement.value === "" && !tileElement.classList.contains("fixNum")) arrTileNums[i][j] = 0;
             else arrTileNums[i][j] = parseInt((tileElement.value));
         }
     }
