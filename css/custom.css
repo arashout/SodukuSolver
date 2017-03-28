@@ -18,7 +18,7 @@ html, body {
   width: 45vw;
   height: 45vw;
   box-sizing: content-box;
-  border: 5px black solid; }
+  border: 2px black solid; }
 
 .tile {
   display: flex;
@@ -33,7 +33,7 @@ html, body {
   width: 5vw;
   height: 5vw;
   box-sizing: border-box;
-  border: 1px blue solid; }
+  border: 1px black solid; }
 
 .fixedNum {
   text-align: center;
