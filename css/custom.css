@@ -36,6 +36,12 @@ html, body {
   height: 5vw;
   box-sizing: border-box; }
 
+.fixedNum {
+  background-color: #ffc299; }
+
+.generatedNum {
+  background-color: #99ff99; }
+
 /*Button stuff*/
 button {
   background-color: white;

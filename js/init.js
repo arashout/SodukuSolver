@@ -17,7 +17,6 @@ function createBoardFromArray(arr2D, n){
         for(var j = 0; j < n; j++){
             var tileElement = document.createElement("input");
             tileElement.setAttribute("type","number");
-            tileElement.classList.add("fixedNum");
             tileElement.classList.add("tile");
             tileElement.id = "tile" + i.toString() + j.toString();
             tileElement.setAttribute("oninput","changeTile(this)");
@@ -26,6 +25,10 @@ function createBoardFromArray(arr2D, n){
         }
     }
 };
+function changeTile(tileElement){
+    if(tileElement.value > 0) tileElement.classList.add("fixedNum");
+    else tileElement.classList.remove("fixedNum");
+}
 function readBoard(n) {
     var arrTileNums = createSquareArray(n);
     for(var i = 0; i < n; i++){
