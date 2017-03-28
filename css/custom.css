@@ -26,22 +26,33 @@ html, body {
   flex-grow: 1;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  font-size: 200%;
   margin: 0;
   padding: 0;
   min-width: 30px;
   min-height: 30px;
   width: 5vw;
   height: 5vw;
-  box-sizing: border-box;
-  border: 1px black solid; }
+  box-sizing: border-box; }
 
-.fixedNum {
+/*Button stuff*/
+button {
+  background-color: white;
+  border: black groove 1px;
+  color: black;
   text-align: center;
-  font-size: 200%; }
+  text-decoration: none;
+  display: flex;
+  font-size: 200%;
+  transition-duration: 0.4s; }
 
-.generatedNum {
-  text-align: center;
-  font-size: 200%; }
+#solveBtn {
+  margin-top: 2vh; }
+
+#solveBtn:hover {
+  background-color: grey;
+  color: white; }
 
 /*Remove the stupid spinner on number fields*/
 input[type="number"]::-webkit-outer-spin-button,

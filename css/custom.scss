@@ -22,7 +22,7 @@ $boardWidth: 45;
     height: $boardWidth + vw;
     
     box-sizing: content-box;
-    border: 5px black solid;
+    border: 2px black solid;
 }
 .tile{
     display: flex;
@@ -43,14 +43,30 @@ $boardWidth: 45;
     height: $boardWidth/9 + vw;
     
     box-sizing: border-box;
-    border: 1px blue solid;
 }
+
 .fixedNum{
 
 }
 .generatedNum{
+}
+/*Button stuff*/
+button {
+    background-color: white;
+    border: black groove 1px;
+    color: black;
     text-align: center;
+    text-decoration: none;
+    display: flex;
     font-size: 200%;
+    transition-duration: 0.4s;
+}
+#solveBtn{
+    margin-top: 2vh;
+}
+#solveBtn:hover {
+    background-color: grey;
+    color: white;
 }
 /*Remove the stupid spinner on number fields*/
 input[type="number"]::-webkit-outer-spin-button,
