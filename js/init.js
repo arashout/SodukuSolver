@@ -1,4 +1,5 @@
 "use strict";
+var n = 9;
 
 var arr = [
 [0,0,3,0,2,0,6,0,0],
@@ -14,8 +15,16 @@ var arr = [
 
 window.onload = function () {
     /*Bind buttons*/
-    createBoardFromArray(arr, 9);
-    var b = new Board(readBoard(9));
+    document.getElementById("solveBtn").addEventListener("click", function(){
+        var b = new Board(readBoard(n));
+        var s = new Solver(b);
+        s.solve();
+    })
+    document.getElementById("resetBtn").addEventListener("click", function(){
+      resetBoard(n);
+    })
+
+    createBoardFromArray(arr, n);
 };
 
 

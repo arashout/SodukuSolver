@@ -88,7 +88,17 @@ class Board {
         for (var r = 0; r < this.n; r++) {
             for (var c = 0; c < this.n; c++) {
                 var tile = document.getElementById("tile" + r.toString() + c.toString());
-                tile.value = this.getNum(r, c);
+                // Color the block differently if tile filled
+                var val = this.getNum(r, c);
+                if(val > 0 && !tile.classList.contains("fixedNum")){
+                    tile.classList.add("generatedNum");
+                    tile.value = val;
+                }
+                else if(val > 0) tile.value = val;
+                else{
+                    tile.classList.remove("generatedNum");
+                    tile.value = "";
+                }
             }
         }
     }
