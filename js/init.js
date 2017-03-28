@@ -20,6 +20,7 @@ function createBoardFromArray(arr2D, n){
             tileElement.classList.add("fixedNum");
             tileElement.classList.add("tile");
             tileElement.id = "tile" + i.toString() + j.toString();
+            tileElement.setAttribute("oninput","changeTile(this)");
             tileElement.value = arr2D[i][j]; //For debugging
             el.appendChild(tileElement);
         }

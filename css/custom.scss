@@ -32,6 +32,9 @@ $boardWidth: 45;
     justify-content: center;
     align-items: center;
     
+    text-align: center;
+    font-size: 200%;
+
     margin: 0;
     padding: 0;
     min-width: $minBoardWidth/9 + px;
@@ -43,8 +46,7 @@ $boardWidth: 45;
     border: 1px blue solid;
 }
 .fixedNum{
-    text-align: center;
-    font-size: 200%;
+
 }
 .generatedNum{
     text-align: center;
