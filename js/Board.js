@@ -42,35 +42,6 @@ class Board {
         c = !this.isNumInColumn(num, c);
         return a && b && c;
     }
-    isInSquare(num, r, c) {
-        // Get index of square from square dictionary
-        var i = this.getSquareIndex(r, c);
-        var square = this.squares[i];
-        // Iterate through list of row, column tuples in square
-        // To check if number is in square
-        var r, c;
-        for (var j = 0; j < this.n; j++) {
-            r = square[j].row;
-            c = square[j].column;
-            var curNum = this.getNum(r, c);
-            if (num === curNum) return true;
-        }
-        return false;
-    }
-
-    isNumInRow(num, r) {
-        for (var c = 0; c < this.n; c++) {
-            if (this.arrTwoD[r][c] === num) return true;
-        }
-        return false;
-    }
-
-    isNumInColumn(num, c) {
-        for (var r = 0; r < this.n; r++) {
-            if (this.arrTwoD[r][c] === num) return true;
-        }
-        return false;
-    }
     getSize() {
         return this.n;
     }
@@ -140,5 +111,34 @@ class Board {
         var i1 = Math.floor(r / this.s).toString();
         var i2 = Math.floor(c / this.s).toString();
         return i1 + i2; //Key!
+    }
+        isInSquare(num, r, c) {
+        // Get index of square from square dictionary
+        var i = this.getSquareIndex(r, c);
+        var square = this.squares[i];
+        // Iterate through list of row, column tuples in square
+        // To check if number is in square
+        var r, c;
+        for (var j = 0; j < this.n; j++) {
+            r = square[j].row;
+            c = square[j].column;
+            var curNum = this.getNum(r, c);
+            if (num === curNum) return true;
+        }
+        return false;
+    }
+
+    isNumInRow(num, r) {
+        for (var c = 0; c < this.n; c++) {
+            if (this.arrTwoD[r][c] === num) return true;
+        }
+        return false;
+    }
+
+    isNumInColumn(num, c) {
+        for (var r = 0; r < this.n; r++) {
+            if (this.arrTwoD[r][c] === num) return true;
+        }
+        return false;
     }
 }

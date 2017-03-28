@@ -4,6 +4,9 @@ class Solver {
     constructor(board) {
         this.board = board;
     }
+    /**
+     * Simple method to start solving algorithm
+     */
     solve() {
         var rcObject = this.board.findFirstEmpty();
         this.backtrack(rcObject);
