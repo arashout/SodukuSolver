@@ -1,8 +1,5 @@
 "use strict";
 
-window.onload = function () {
-    /*Bind buttons*/
-};
 var arr = [
 [0,0,3,0,2,0,6,0,0],
 [9,0,0,3,0,5,0,0,1],
@@ -13,7 +10,12 @@ var arr = [
 [0,0,2,6,0,9,5,0,0],
 [8,0,0,2,0,3,0,0,9],
 [0,0,5,0,1,0,3,0,0],
-]
-;
-createBoardFromArray(arr, 9);
-var b = new Board(readBoard(9));
+];
+
+window.onload = function () {
+    /*Bind buttons*/
+    createBoardFromArray(arr, 9);
+    var b = new Board(readBoard(9));
+};
+
+

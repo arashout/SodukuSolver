@@ -43,20 +43,24 @@ html, body {
   background-color: #99ff99; }
 
 /*Button stuff*/
+.buttons {
+  display: flex;
+  flex-direction: row;
+  width: 45vw;
+  justify-content: space-around; }
+
 button {
+  display: flex;
   background-color: white;
   border: black groove 1px;
   color: black;
   text-align: center;
   text-decoration: none;
-  display: flex;
-  font-size: 200%;
-  transition-duration: 0.4s; }
-
-#solveBtn {
+  font-size: calc(12px + 1.2vw);
+  transition-duration: 0.4s;
   margin-top: 2vh; }
 
-#solveBtn:hover {
+button:hover {
   background-color: grey;
   color: white; }
 
