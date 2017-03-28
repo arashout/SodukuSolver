@@ -29,18 +29,6 @@ function createBoardFromArray(arr2D, n){
         }
     }
 };
-function resetBoard(n){
-    for(var i = 0; i < n; i++){
-        for(var j = 0; j < n; j++){
-            var idName = "tile" + i.toString() + j.toString();
-            var tileElement = document.getElementById(idName);
-            // Reset to blank
-            tileElement.classList.remove("generatedNum");
-            tileElement.classList.remove("fixedNum");
-            tileElement.value = "";
-        }
-    }
-}
 function changeTile(tileElement){
     if(tileElement.value > 0) tileElement.classList.add("fixedNum");
     else tileElement.classList.remove("fixedNum");

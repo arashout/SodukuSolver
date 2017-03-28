@@ -52,6 +52,13 @@ class Board {
     setNum(num, r, c) {
         this.arrTwoD[r][c] = num;
     }
+    function resetBoard(){
+        for(var i = 0; i < this.n; i++){
+            for(var j = 0; j < this.n; j++){
+                this.arrTwoD[i][j] = 0;
+            }
+        }
+    }
     /**
      * "Draws" the current board onto the HTML page
      */
@@ -73,6 +80,7 @@ class Board {
             }
         }
     }
+
     //HELPER FUNCTIONS
     /**
      * Splits up the Sudoku grid into squares
