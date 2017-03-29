@@ -1,17 +1,5 @@
 "use strict";
-function createSquareArray(n) {
-    var arr = [];
-    for(var i = 0; i < n; i++){
-        // Initialize rows of 2D array here
-        arr[i] = [];
-        for(var j = 0; j < n; j++){
-            // Initialize columns in each row
-            arr[i].push([]);
-        }
-    }
-    return arr;
-};
-function createBoardFromArray(arr2D, n){
+function initTiles(n){
     var el = document.getElementById("board");
     for(var i = 0; i < n; i++){
         for(var j = 0; j < n; j++){
@@ -23,26 +11,15 @@ function createBoardFromArray(arr2D, n){
             // value with javascript the function doesn't run
             // This is actually perfect for me! Since I only want it
             // to fire when the user changes the values
-            tileElement.setAttribute("oninput","changeTile(this)");
-            tileElement.value = arr2D[i][j];
+            tileElement.setAttribute("oninput","globalBoard.changeTile(this)");
             el.appendChild(tileElement);
         }
     }
 };
 function changeTile(tileElement){
-    if(tileElement.value > 0) tileElement.classList.add("fixedNum");
-    else tileElement.classList.remove("fixedNum");
-}
-function readBoard(n) {
-    var arrTileNums = createSquareArray(n);
-    for(var i = 0; i < n; i++){
-        for(var j = 0; j < n; j++){
-            var idName = "tile" + i.toString() + j.toString();
-            var tileElement = document.getElementById(idName);
-            // Only read values that user enters (red tiles), otherwise enter blank
-            if(tileElement.value === "" && !tileElement.classList.contains("fixNum")) arrTileNums[i][j] = 0;
-            else arrTileNums[i][j] = parseInt((tileElement.value));
-        }
+    if(tileElement.value > 0){
+        console.log(b.isValidMove(tileElement.value),0,0);
+        tileElement.classList.add("fixedNum");
     }
-    return arrTileNums;
+    else tileElement.classList.remove("fixedNum");
 }

@@ -48,17 +48,29 @@ class Board {
     getNum(r, c) {
         return this.arrTwoD[r][c];
     }
-
+    /**
+     * Sets the number in the board, if the move is valid
+     * but reuturns false when the move is not possible
+     * @param   {int} num [The number to enter]
+     * @param   {int} r   [The row]
+     * @param   {int} c   [The column]
+     * @returns {boolean}  [The status code]
+     */
     setNum(num, r, c) {
-        this.arrTwoD[r][c] = num;
+        if(this.isValidMove(num, r, c)){
+            this.arrTwoD[r][c] = num;
+            return true;
+        }
+        else return false;
     }
-    function resetBoard(){
+    resetBoard(){
         for(var i = 0; i < this.n; i++){
             for(var j = 0; j < this.n; j++){
                 this.arrTwoD[i][j] = 0;
             }
         }
     }
+    // USER GUI & INPUT
     /**
      * "Draws" the current board onto the HTML page
      */
@@ -66,21 +78,16 @@ class Board {
         for (var r = 0; r < this.n; r++) {
             for (var c = 0; c < this.n; c++) {
                 var tile = document.getElementById("tile" + r.toString() + c.toString());
-                // Color the block differently if tile filled
-                var val = this.getNum(r, c);
-                if(val > 0 && !tile.classList.contains("fixedNum")){
-                    tile.classList.add("generatedNum");
-                    tile.value = val;
+                if(val > 0){
+                    tile.value = this.arrTwoD[r][c];
                 }
                 else if(val > 0) tile.value = val;
                 else{
-                    tile.classList.remove("generatedNum");
                     tile.value = "";
                 }
             }
         }
     }
-
     //HELPER FUNCTIONS
     /**
      * Splits up the Sudoku grid into squares
@@ -120,7 +127,7 @@ class Board {
         var i2 = Math.floor(c / this.s).toString();
         return i1 + i2; //Key!
     }
-        isInSquare(num, r, c) {
+    isInSquare(num, r, c) {
         // Get index of square from square dictionary
         var i = this.getSquareIndex(r, c);
         var square = this.squares[i];
