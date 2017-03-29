@@ -35,6 +35,10 @@ class Board {
      * @returns {boolean} [True means okay to insert num]
      */
     isValidMove(num, r, c){
+        // Always okay to reset tile
+        if(num === 0){
+            return true;
+        }
         // Just variables for boolean conditions
         var a, b, c;
         a = !this.isInSquare(num, r, c);
@@ -61,7 +65,7 @@ class Board {
             this.arrTwoD[r][c] = num;
             return true;
         }
-        else return false;
+        return false;
     }
     resetBoard(){
         for(var i = 0; i < this.n; i++){

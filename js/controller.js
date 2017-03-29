@@ -20,8 +20,12 @@ function initTiles(n){
 };
 function changeTile(tileElement){
     var rc = parseTileId(tileElement.id);
-    var tileValue = tileElement.value;
-    if(tileValue === "") globalBoard.setNum(0, rc.row, rc.column);
+    var tileValue = parseInt(tileElement.value);
+    if(isNaN(tileValue)) {
+        // Reset tile
+        globalBoard.setNum(0, rc.row, rc.column);
+        return;
+    }
     var result = globalBoard.setNum(tileValue, rc.row, rc.column);
     if(!result) console.log("Couldn't assign number");
     globalBoard.drawBoard();

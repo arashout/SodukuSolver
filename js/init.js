@@ -1,6 +1,6 @@
 "use strict";
 
-function createSquareArray(n) {
+function createZeroMatrix(n) {
     var arr = [];
     for (var i = 0; i < n; i++) {
         // Initialize rows of 2D array here
@@ -8,21 +8,22 @@ function createSquareArray(n) {
         for (var j = 0; j < n; j++) {
             // Initialize columns in each row
             arr[i].push([]);
+            arr[i][j] = 0;
         }
     }
     return arr;
 };
-
 var n = 9;
 var globalBoard;
 
 window.onload = function () {
     initTiles(n);
-    globalBoard = new Board(createSquareArray(n));
+    globalBoard = new Board(createZeroMatrix(n));
     /*Bind buttons*/
     document.getElementById("solveBtn").addEventListener("click", function () {
         var s = new Solver(globalBoard);
-        s.solve();
+        var rc = globalBoard.findFirstEmpty();
+        s.solve(rc);
         globalBoard.drawBoard();
     })
     document.getElementById("resetBtn").addEventListener("click", function () {
