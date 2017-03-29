@@ -5,6 +5,8 @@ function initTiles(n){
         for(var j = 0; j < n; j++){
             var tileElement = document.createElement("input");
             tileElement.setAttribute("type","number");
+            tileElement.setAttribute("min","1");
+            tileElement.setAttribute("max",n.toString());
             tileElement.classList.add("tile");
             tileElement.id = "tile" + i.toString() + j.toString();
             // The cool thing about this event is that if I change the
