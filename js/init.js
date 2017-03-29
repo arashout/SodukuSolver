@@ -23,6 +23,7 @@ window.onload = function () {
     document.getElementById("solveBtn").addEventListener("click", function () {
         var s = new Solver(globalBoard);
         s.solve();
+        globalBoard.drawBoard();
     })
     document.getElementById("resetBtn").addEventListener("click", function () {
         globalBoard.resetBoard();
