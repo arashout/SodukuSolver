@@ -13,15 +13,22 @@ function initTiles(n){
             // value with javascript the function doesn't run
             // This is actually perfect for me! Since I only want it
             // to fire when the user changes the values
-            tileElement.setAttribute("oninput","globalBoard.changeTile(this)");
+            tileElement.setAttribute("oninput","changeTile(this)");
             el.appendChild(tileElement);
         }
     }
 };
 function changeTile(tileElement){
-    if(tileElement.value > 0){
-        console.log(b.isValidMove(tileElement.value),0,0);
-        tileElement.classList.add("fixedNum");
-    }
-    else tileElement.classList.remove("fixedNum");
+    var rc = parseTileId(tileElement.id);
+    var tileValue = tileElement.value;
+    if(tileValue === "") globalBoard.setNum(0, rc.row, rc.column);
+    var result = globalBoard.setNum(tileValue, rc.row, rc.column);
+    if(!result) console.log("Couldn't assign number");
+    globalBoard.drawBoard();
+}
+function parseTileId(tileId){
+    var matches = tileId.match(/\d/g);
+    var rc = {row: matches[0],
+             column: matches[1]};
+    return rc;
 }
