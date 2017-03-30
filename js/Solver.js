@@ -5,11 +5,13 @@ class Solver {
         this.board = board;
     }
     /**
-     * Simple method to start solving algorithm
+     * Starts off the backtracking solving algorithm
+     * @returns {boolean} [If there is a solution returns true]
      */
     solve() {
         var rcObject = this.board.findFirstEmpty();
-        this.backtrack(rcObject);
+        if (this.backtrack(rcObject)) return true;
+        else return false;
     }
     /**
      * A recursive Sudoku solving algorithm
