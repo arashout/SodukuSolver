@@ -28,22 +28,7 @@ class Solver {
                 if (this.backtrack(newRC) === true) return true;
             }
         }
+        this.board.setNum(0, rc.row, rc.column)
         return false;
     };
-    /**
-     * Method that brute force checks every tile
-     * to ensure Sudoku is valid
-     * @returns {boolean} True for valid Sudoku
-     */
-    isValidSudoku() {
-        for (var r = 0; r < this.board.getSize(); r++) {
-            for (var c = 0; c < this.board.getSize(); c++) {
-                var num = this.board.getNum(r, c);
-                this.board.setNum(0, r, c);
-                if(this.board.isValidMove(num, r, c) === false) return false;
-                this.board.setNum(num, r, c);
-            }
-        }
-        return true;
-    }
 }
