@@ -2,6 +2,10 @@
 
 function initTiles(n) {
     var el = document.getElementById("board");
+    // Clear previous tiles first
+    while (el.hasChildNodes()) {
+        el.removeChild(el.lastChild);
+    }
     for (var i = 0; i < n; i++) {
         for (var j = 0; j < n; j++) {
             var tileElement = document.createElement("input");
@@ -19,7 +23,11 @@ function initTiles(n) {
         }
     }
 };
-
+function initBoard(inputElement){
+    n = parseInt(inputElement.value);
+    initTiles(n);
+    globalBoard = new Board(createZeroMatrix(n));
+}
 function changeTile(tileElement) {
     var rc = parseTileId(tileElement.id);
     var tileValue = parseInt(tileElement.value);
