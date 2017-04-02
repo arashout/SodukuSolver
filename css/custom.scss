@@ -9,7 +9,7 @@ html, body{
     justify-content: center;
 }
 $minBoardWidth: 288;
-$boardWidth: 70;
+$boardWidth: 55;
 #board{
     display: flex;
     justify-content: flex-start;
@@ -101,6 +101,14 @@ button:hover {
     background-color: grey;
     color: white;
 }
+
+.links-to-me{
+    font-size: calc(6px + 1.2vw);
+}
+a{
+    text-decoration: none;
+}
+
 /*Remove the stupid spinner on number fields*/
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {

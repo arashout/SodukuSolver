@@ -1,58 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <!-- Basic Page Needs
-            –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta charset="utf-8">
-    <title>Sudoku Solver</title>
-    <meta name="description" content="A sudoku">
-    <meta name="author" content="Arash Outadi">
-    <!-- Mobile Specific Metas
-            –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- FONT
-            –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <!-- CSS
-            –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="stylesheet" href="css/custom.css">
-    <!-- Favicon
-            –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
-</head>
-
-<body>
-    <div class="container">
-        <div id="messageBar" class="default">
-        </div>
-
-        <div id="board">
-        </div>
-        <div class="buttons">
-            <button id="solveBtn" class="default">
-                    Solve Sudoku
-            </button>
-            <div class="default">
-            <form id="parametersForm" name="parameters">
-                Board Dimension:
-                <input type="radio" name="dimension" onclick="initBoard(this.value)" value=9 checked="true"> 9
-                <input type="radio" name="dimension" onclick="initBoard(this.value)" value=16> 16
-            </form>
-    </div>
-            <button id="resetBtn" class="default">
-                    Reset Board
+    <head>
+        <!-- Basic Page Needs
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta charset="utf-8">
+        <title>Sudoku Solver</title>
+        <meta name="description" content="A sudoku">
+        <meta name="author" content="Arash Outadi">
+        <!-- Mobile Specific Metas
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- FONT
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <!-- CSS
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link rel="stylesheet" href="css/custom.css">
+        <!-- Favicon
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link rel="icon" type="image/png" href="images/favicon.png">
+    </head>
+    <body>
+        <div class="container">
+            <div id="messageBar" class="default">
+            </div>
+            <div id="board">
+            </div>
+            <div class="buttons">
+                <button id="solveBtn" class="default">
+                Solve Sudoku
                 </button>
+                <div class="default">
+                    <form id="parametersForm" name="parameters">
+                        Board Dimension:
+                        <input type="radio" name="dimension" onclick="initBoard(this.value)" value=9 checked="true"> 9
+                        <input type="radio" name="dimension" onclick="initBoard(this.value)" value=16> 16
+                    </form>
+                </div>
+                <button id="resetBtn" class="default">
+                Reset Board
+                </button>
+            </div>
+            <div>
+            <a href="https://github.com/arashout/SudokuSolver">
+                <div class="row links-to-me" align="center">
+                    <p>Learn about the project
+                        <img src="images/GitHub-Mark-32px.png" alt="Learn more about this project" width="32px" height="32px">
+                    </p>
+                </div>
+                <div class="row links-to-me" align="center">
+                    <p>Learn about me
+                        <a href="https://ca.linkedin.com/pub/arash-outadi/86/732/692"><img src="images/linkedin-512.png" width="32px" height="32px" alt="View Arash Outadi's LinkedIn profile" border="0"></a>
+                    </p>
+                </div>
+            </a>
+            </div>
         </div>
-    </div>
-
-</body>
-
-<!-- Javascript Files -->
-<script src="js/helper.js" type="text/javascript"></script>
-<script src="js/Board.js" type="text/javascript"></script>
-<script src="js/Solver.js" type="text/javascript"></script>
-<script src="js/controller.js" type="text/javascript"></script>
-<script src="js/init.js" type="text/javascript"></script>
-
+    </body>
+    <!-- Javascript Files -->
+    <script src="js/helper.js" type="text/javascript"></script>
+    <script src="js/Board.js" type="text/javascript"></script>
+    <script src="js/Solver.js" type="text/javascript"></script>
+    <script src="js/controller.js" type="text/javascript"></script>
+    <script src="js/init.js" type="text/javascript"></script>
 </html>

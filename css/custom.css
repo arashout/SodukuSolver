@@ -15,8 +15,8 @@ html, body {
   flex-wrap: wrap;
   min-width: 288px;
   min-height: 288px;
-  width: 70vmin;
-  height: 70vmin;
+  width: 55vmin;
+  height: 55vmin;
   box-sizing: content-box;
   border: 2px black solid; }
 
@@ -36,14 +36,14 @@ html, body {
 .dimension16 {
   min-width: 18px;
   min-height: 18px;
-  width: 4.375vmin;
-  height: 4.375vmin; }
+  width: 3.4375vmin;
+  height: 3.4375vmin; }
 
 .dimension9 {
   min-width: 32px;
   min-height: 32px;
-  width: 7.77778vmin;
-  height: 7.77778vmin; }
+  width: 6.11111vmin;
+  height: 6.11111vmin; }
 
 .userNum {
   background-color: #ffc299; }
@@ -68,7 +68,7 @@ html, body {
 .buttons {
   display: flex;
   flex-direction: row;
-  width: 70vw;
+  width: 55vw;
   justify-content: space-around; }
 
 button {
@@ -80,6 +80,12 @@ button {
 button:hover {
   background-color: grey;
   color: white; }
+
+.links-to-me {
+  font-size: calc(6px + 1.2vw); }
+
+a {
+  text-decoration: none; }
 
 /*Remove the stupid spinner on number fields*/
 input[type="number"]::-webkit-outer-spin-button,
