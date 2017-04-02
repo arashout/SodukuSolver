@@ -24,17 +24,14 @@ html, body {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
-  z-index: 1;
   justify-content: center;
   align-items: center;
   font-size: calc(1px + 1.2vw);
   text-align: center;
   margin: 0;
   padding: 0;
+  border: 1px solid black;
   box-sizing: border-box; }
-
-.tileBottom {
-  border-bottom: 2px solid black; }
 
 .dimension16 {
   min-width: 18px;
@@ -50,6 +47,12 @@ html, body {
 
 .userNum {
   background-color: #ffc299; }
+
+.tileBottom {
+  border-bottom: 2px solid orange; }
+
+.tileRight {
+  border-right: 2px solid orange; }
 
 .default {
   display: flex;

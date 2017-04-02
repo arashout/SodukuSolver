@@ -92,7 +92,8 @@ function initTiles(n) {
             // Additional class that varies width/height of tiles
             // based on "n", where n is dimension of board (nxn)
             tileElement.classList.add("dimension" + n);
-            tileElement.classList.add("tileBottom");
+            if(isSquareBottomEdge(i,n)) tileElement.classList.add("tileBottom");
+            if(isSquareRightEdge(j,n)) tileElement.classList.add("tileRight");
             tileElement.id = getTileId(i,j);
             // The cool thing about this event is that if I change the
             // value with javascript the function doesn't run

@@ -42,5 +42,13 @@ function createZeroMatrix(n) {
     }
     return arr;
 };
-function isSquareEdge(row, column, n){
+function isSquareBottomEdge(row,n){
+    var s = Math.sqrt(n);
+    if(row % s === (s-1) && row != (n-1)) return true;
+    return false;
+}
+function isSquareRightEdge(column, n){
+    var s = Math.sqrt(n);
+    if(column % s === (s-1) && column != (n-1)) return true;
+    return false;
 }
