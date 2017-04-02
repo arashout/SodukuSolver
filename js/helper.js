@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Given a tile element id returns
  * an object containing the row and column
@@ -41,3 +42,5 @@ function createZeroMatrix(n) {
     }
     return arr;
 };
+function isSquareEdge(row, column, n){
+}

@@ -4,8 +4,7 @@ var n = 9;
 var globalBoard;
 
 window.onload = function () {
-    initTiles(n);
-    globalBoard = new Board(createZeroMatrix(n));
+    initBoard(n);
     /*Bind buttons*/
     document.getElementById("solveBtn").addEventListener("click", function () {
         var s = new Solver(globalBoard);

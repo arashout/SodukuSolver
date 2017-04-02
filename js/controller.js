@@ -60,8 +60,20 @@ function setMessageText(stringMessage){
  * @param {object} inputElement [[Description]]
  */
 function initBoard(n){
+    clearBoardTiles();
     initTiles(n);
     globalBoard = new Board(createZeroMatrix(n));
+}
+/**
+ * Simple function to clear the board div
+ * @return {[type]} [description]
+ */
+function clearBoardTiles(){
+    var el = document.getElementById("board");
+    // Clear previous tiles first
+    while (el.hasChildNodes()) {
+        el.removeChild(el.lastChild);
+    }
 }
 /**
  * Clears the current board DIV
@@ -72,10 +84,6 @@ function initBoard(n){
  */
 function initTiles(n) {
     var el = document.getElementById("board");
-    // Clear previous tiles first
-    while (el.hasChildNodes()) {
-        el.removeChild(el.lastChild);
-    }
     for (var i = 0; i < n; i++) {
         for (var j = 0; j < n; j++) {
             var tileElement = document.createElement("input");
@@ -84,6 +92,7 @@ function initTiles(n) {
             // Additional class that varies width/height of tiles
             // based on "n", where n is dimension of board (nxn)
             tileElement.classList.add("dimension" + n);
+            tileElement.classList.add("tileBottom");
             tileElement.id = getTileId(i,j);
             // The cool thing about this event is that if I change the
             // value with javascript the function doesn't run
