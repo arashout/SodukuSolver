@@ -5,12 +5,21 @@
  * @returns {object} [row column object]
  */
 function parseTileId(tileId) {
-    var matches = tileId.match(/\d/g);
+    var matches = tileId.match(/\d+/g);
     var rc = {
         row: matches[0],
         column: matches[1]
     };
     return rc;
+}
+/**
+ * Given a row and column returns a tile element id
+ * @param   {[[Type]]} row    [[Description]]
+ * @param   {[[Type]]} column [[Description]]
+ * @returns {string}   [Tile element id]
+ */
+function getTileId(row, column){
+    return "tile" + row.toString() + "-" + column.toString();
 }
 /**
  * Given an integer create a nxn matrix

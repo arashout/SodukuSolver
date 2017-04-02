@@ -82,7 +82,7 @@ class Board {
     drawBoard(){
         for (var r = 0; r < this.n; r++) {
             for (var c = 0; c < this.n; c++) {
-                var tile = document.getElementById("tile" + r.toString() + c.toString());
+                var tile = document.getElementById(getTileId(r,c));
                 var val = this.arrTwoD[r][c];
                 if(val > 0){
                     tile.value = this.arrTwoD[r][c];
