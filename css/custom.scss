@@ -40,6 +40,12 @@ $boardWidth: 70;
 
     box-sizing: border-box;
 }
+.dimension25{
+    min-width: $minBoardWidth/25 + px;
+    min-height: $minBoardWidth/25 + px;
+    width: $boardWidth/25 + vmin;
+    height: $boardWidth/25 + vmin;
+}
 .dimension16{
     min-width: $minBoardWidth/16 + px;
     min-height: $minBoardWidth/16 + px;

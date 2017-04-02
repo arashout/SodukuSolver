@@ -32,6 +32,12 @@ html, body {
   padding: 0;
   box-sizing: border-box; }
 
+.dimension25 {
+  min-width: 11.52px;
+  min-height: 11.52px;
+  width: 2.8vmin;
+  height: 2.8vmin; }
+
 .dimension16 {
   min-width: 18px;
   min-height: 18px;

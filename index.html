@@ -35,8 +35,11 @@
             </button>
             <div class="default">
             <form id="parametersForm" name="parameters">
-                <input type="radio" name="dimension" onclick="initBoard(this.value)" value=9> 9
+                Board Dimension:
+                <input type="radio" name="dimension" onclick="initBoard(this.value)" value=9 checked="true"> 9
                 <input type="radio" name="dimension" onclick="initBoard(this.value)" value=16> 16
+                <input type="radio" name="dimension" onclick="initBoard(this.value)" value=25> 25 <br>
+                Animation Speed:
             </form>
     </div>
             <button id="resetBtn" class="default">
@@ -48,9 +51,9 @@
 </body>
 
 <!-- Javascript Files -->
+<script src="js/helper.js" type="text/javascript"></script>
 <script src="js/Board.js" type="text/javascript"></script>
 <script src="js/Solver.js" type="text/javascript"></script>
-<script src="js/helper.js" type="text/javascript"></script>
 <script src="js/controller.js" type="text/javascript"></script>
 <script src="js/init.js" type="text/javascript"></script>
 
