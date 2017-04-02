@@ -18,7 +18,7 @@ function changeTile(tileElement) {
     }
     else if(!isValidTileNum(tileValue)){
         tileElement.value = "";
-        setMessageText("Numbers must be between 1 - n");
+        setMessageText("Numbers must be between 1 - " + n.toString());
     }
     else{
         var result = globalBoard.setNum(tileValue, rc.row, rc.column);
@@ -59,7 +59,9 @@ function setMessageText(stringMessage){
  * Initializes the board given
  * @param {object} inputElement [[Description]]
  */
-function initBoard(n){
+function initBoard(dimension){
+    //gloabl n
+    n = dimension;
     clearBoardTiles();
     initTiles(n);
     globalBoard = new Board(createZeroMatrix(n));
