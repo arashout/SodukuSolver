@@ -8,8 +8,8 @@ html, body{
     align-items: center;
     justify-content: center;
 }
-$minBoardWidth: 270;
-$boardWidth: 45;
+$minBoardWidth: 300;
+$boardWidth: 60;
 #board{
     display: flex;
     justify-content: flex-start;
@@ -18,8 +18,8 @@ $boardWidth: 45;
     
     min-width: $minBoardWidth + px;
     min-height: $minBoardWidth + px;
-    width: $boardWidth + vw;
-    height: $boardWidth + vw;
+    width: $boardWidth + vmin;
+    height: $boardWidth + vmin;
     
     box-sizing: content-box;
     border: 2px black solid;
@@ -37,14 +37,21 @@ $boardWidth: 45;
 
     margin: 0;
     padding: 0;
+
+    box-sizing: border-box;
+}
+.dimension16{
+    min-width: $minBoardWidth/16 + px;
+    min-height: $minBoardWidth/16 + px;
+    width: $boardWidth/16 + vw;
+    height: $boardWidth/16 + vw;
+}
+.dimension9{
     min-width: $minBoardWidth/9 + px;
     min-height: $minBoardWidth/9 + px;
     width: $boardWidth/9 + vw;
     height: $boardWidth/9 + vw;
-    
-    box-sizing: border-box;
 }
-
 .fixedNum{
     background-color: #ffc299;
 }

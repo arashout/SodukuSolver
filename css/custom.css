@@ -13,10 +13,10 @@ html, body {
   justify-content: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
-  min-width: 270px;
-  min-height: 270px;
-  width: 45vw;
-  height: 45vw;
+  min-width: 300px;
+  min-height: 300px;
+  width: 60vmin;
+  height: 60vmin;
   box-sizing: content-box;
   border: 2px black solid; }
 
@@ -30,11 +30,19 @@ html, body {
   font-size: 200%;
   margin: 0;
   padding: 0;
-  min-width: 30px;
-  min-height: 30px;
-  width: 5vw;
-  height: 5vw;
   box-sizing: border-box; }
+
+.dimension16 {
+  min-width: 18.75px;
+  min-height: 18.75px;
+  width: 3.75vw;
+  height: 3.75vw; }
+
+.dimension9 {
+  min-width: 33.33333px;
+  min-height: 33.33333px;
+  width: 6.66667vw;
+  height: 6.66667vw; }
 
 .fixedNum {
   background-color: #ffc299; }
@@ -46,7 +54,7 @@ html, body {
 .buttons {
   display: flex;
   flex-direction: row;
-  width: 45vw;
+  width: 60vw;
   justify-content: space-around; }
 
 button {
