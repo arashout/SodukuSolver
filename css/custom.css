@@ -15,8 +15,8 @@ html, body {
   flex-wrap: wrap;
   min-width: 288px;
   min-height: 288px;
-  width: 60vmin;
-  height: 60vmin;
+  width: 70vmin;
+  height: 70vmin;
   box-sizing: content-box;
   border: 2px black solid; }
 
@@ -35,26 +35,22 @@ html, body {
 .dimension16 {
   min-width: 18px;
   min-height: 18px;
-  width: 3.75vmin;
-  height: 3.75vmin; }
+  width: 4.375vmin;
+  height: 4.375vmin; }
 
 .dimension9 {
   min-width: 32px;
   min-height: 32px;
-  width: 6.66667vmin;
-  height: 6.66667vmin; }
+  width: 7.77778vmin;
+  height: 7.77778vmin; }
 
-.fixedNum {
+.userNum {
   background-color: #ffc299; }
 
-.generatedNum {
-  background-color: #99ff99; }
-
-/*Button stuff*/
 .buttons {
   display: flex;
   flex-direction: row;
-  width: 60vw;
+  width: 70vw;
   justify-content: space-around; }
 
 button {
@@ -67,6 +63,16 @@ button {
   font-size: calc(6px + 1.2vw);
   transition-duration: 0.4s;
   margin-top: 2vh; }
+
+#messageBar {
+  display: flex;
+  min-height: calc(6px + 1.2vw);
+  background-color: white;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: calc(6px + 1.2vw);
+  margin-bottom: 2vh; }
 
 button:hover {
   background-color: grey;

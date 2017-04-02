@@ -10,16 +10,50 @@
 function changeTile(tileElement) {
     var rc = parseTileId(tileElement.id);
     var tileValue = parseInt(tileElement.value);
+    var isActualNum = false;
+
     if (isNaN(tileValue)) {
-        // Reset tile, if input field is ""
+        // Reset tile if tileValue is "" or invalid
         globalBoard.setNum(0, rc.row, rc.column);
-        return;
     }
-    var result = globalBoard.setNum(tileValue, rc.row, rc.column);
-    if (!result) console.log("Couldn't assign number");
+    else if(!isValidTileNum(tileValue)){
+        tileElement.value = "";
+        setMessageText("Numbers must be between 1 - n");
+    }
+    else{
+        var result = globalBoard.setNum(tileValue, rc.row, rc.column);
+        if (!result) {
+            setMessageText("Number is already in the same row, column or square");
+        }
+        else{
+            tileElement.classList.add("userNum");
+            isActualNum = true;
+            setMessageText("");
+        }
+    }
+
+    if(!isActualNum) tileElement.classList.remove("userNum");
     globalBoard.drawBoard();
 }
-
+/**
+ * Quick function to validate inputs
+ * @param   {Intger} num [[Description]]
+ * @returns {boolean}  [Whether number is valid or not]
+ */
+function isValidTileNum(num){
+    if(num > n || num < 0){
+        return false;
+    }
+    return true;
+}
+/**
+ * Simple setter function to set the text shown to the user
+ * @param {[String]} stringMessage [The string to outputted]
+ */
+function setMessageText(stringMessage){
+    var messageEl = document.getElementById("messageBar");
+    messageEl.textContent = stringMessage;
+}
 //BOARD CREATION FUNCTIONS
 /**
  * Initializes the board given
@@ -29,6 +63,13 @@ function initBoard(n){
     initTiles(n);
     globalBoard = new Board(createZeroMatrix(n));
 }
+/**
+ * Clears the current board DIV
+ * Loops through every tile in the board
+ * and sets up the ids, classes and events
+ * of each tile
+ * @param {[Integer]} n [Dimension of board]
+ */
 function initTiles(n) {
     var el = document.getElementById("board");
     // Clear previous tiles first
@@ -39,8 +80,6 @@ function initTiles(n) {
         for (var j = 0; j < n; j++) {
             var tileElement = document.createElement("input");
             tileElement.setAttribute("type", "number");
-            tileElement.setAttribute("min", 1);
-            tileElement.setAttribute("max", n);
             tileElement.classList.add("tile");
             // Additional class that varies width/height of tiles
             // based on "n", where n is dimension of board (nxn)

@@ -9,7 +9,7 @@ html, body{
     justify-content: center;
 }
 $minBoardWidth: 288;
-$boardWidth: 60;
+$boardWidth: 70;
 #board{
     display: flex;
     justify-content: flex-start;
@@ -52,13 +52,10 @@ $boardWidth: 60;
     width: $boardWidth/9 + vmin;
     height: $boardWidth/9 + vmin;
 }
-.fixedNum{
+.userNum{
     background-color: #ffc299;
 }
-.generatedNum{
-    background-color: #99ff99;
-}
-/*Button stuff*/
+
 .buttons{
     display: flex;
     flex-direction: row;
@@ -81,6 +78,22 @@ button {
     transition-duration: 0.4s;
 
     margin-top: 2vh;
+}
+#messageBar{
+    display: flex;
+    // Keep the div from collapsing!
+    min-height: calc(6px + 1.2vw);;
+
+    background-color: white;
+    color: black;
+
+    text-align: center;
+    text-decoration: none;
+
+    // Hack to let me specify minimum font size
+    font-size:calc(6px + 1.2vw);
+
+    margin-bottom: 2vh;
 }
 button:hover {
     background-color: grey;

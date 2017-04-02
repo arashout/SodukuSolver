@@ -73,6 +73,7 @@ class Board {
                 this.arrTwoD[i][j] = 0;
             }
         }
+        // Remove
     }
     // USER GUI & INPUT
     /**
@@ -89,6 +90,8 @@ class Board {
                 else if(val > 0) tile.value = val;
                 else{
                     tile.value = "";
+                    // Remove any stylings on tile
+                    tile.classList.remove("userNum");
                 }
             }
         }
