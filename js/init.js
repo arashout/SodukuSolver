@@ -11,7 +11,6 @@ window.onload = function () {
         var s = new Solver(globalBoard);
         var rc = globalBoard.findFirstEmpty();
         console.log(s.solve(rc));
-        globalBoard.drawBoard();
     })
     document.getElementById("resetBtn").addEventListener("click", function () {
         globalBoard.resetBoard();

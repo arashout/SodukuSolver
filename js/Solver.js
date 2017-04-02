@@ -20,6 +20,7 @@ class Solver {
      */
     backtrack(rc) {
         this.board.drawBoard();
+        
         if (this.board.isFull()) {
             return true;
         }
