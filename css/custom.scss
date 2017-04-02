@@ -8,7 +8,7 @@ html, body{
     align-items: center;
     justify-content: center;
 }
-$minBoardWidth: 300;
+$minBoardWidth: 288;
 $boardWidth: 60;
 #board{
     display: flex;
@@ -43,14 +43,14 @@ $boardWidth: 60;
 .dimension16{
     min-width: $minBoardWidth/16 + px;
     min-height: $minBoardWidth/16 + px;
-    width: $boardWidth/16 + vw;
-    height: $boardWidth/16 + vw;
+    width: $boardWidth/16 + vmin;
+    height: $boardWidth/16 + vmin;
 }
 .dimension9{
     min-width: $minBoardWidth/9 + px;
     min-height: $minBoardWidth/9 + px;
-    width: $boardWidth/9 + vw;
-    height: $boardWidth/9 + vw;
+    width: $boardWidth/9 + vmin;
+    height: $boardWidth/9 + vmin;
 }
 .fixedNum{
     background-color: #ffc299;

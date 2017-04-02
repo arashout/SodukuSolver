@@ -1,10 +1,17 @@
 "use strict";
-
+/**
+ * The function that runs everytime user changes
+ * the number on a tile
+ * The function attempts to change the global
+ * board representation and will notify the user
+ * if the number cannot be placed
+ * @param {object} tileElement [[Description]]
+ */
 function changeTile(tileElement) {
     var rc = parseTileId(tileElement.id);
     var tileValue = parseInt(tileElement.value);
     if (isNaN(tileValue)) {
-        // Reset tile
+        // Reset tile, if input field is ""
         globalBoard.setNum(0, rc.row, rc.column);
         return;
     }
@@ -13,11 +20,3 @@ function changeTile(tileElement) {
     globalBoard.drawBoard();
 }
 
-function parseTileId(tileId) {
-    var matches = tileId.match(/\d/g);
-    var rc = {
-        row: matches[0],
-        column: matches[1]
-    };
-    return rc;
-}

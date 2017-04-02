@@ -1,18 +1,5 @@
 "use strict";
 
-function createZeroMatrix(n) {
-    var arr = [];
-    for (var i = 0; i < n; i++) {
-        // Initialize rows of 2D array here
-        arr[i] = [];
-        for (var j = 0; j < n; j++) {
-            // Initialize columns in each row
-            arr[i].push([]);
-            arr[i][j] = 0;
-        }
-    }
-    return arr;
-};
 var n = 9;
 var globalBoard;
 
