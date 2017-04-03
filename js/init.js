@@ -9,7 +9,9 @@ window.onload = function () {
     document.getElementById("solveBtn").addEventListener("click", function () {
         var s = new Solver(globalBoard);
         var rc = globalBoard.findFirstEmpty();
-        console.log(s.solve(rc));
+        if(!s.solve(rc)){
+            setMessageText("Sudoku board is unsolvable!");
+        }
     })
     document.getElementById("resetBtn").addEventListener("click", function () {
         globalBoard.resetBoard();
